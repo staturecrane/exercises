@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+ <title>Learning Javascript</title>
+
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+ </head>
+
+ <body>
+
+ <input id="myInput" type="text" value="text to translate" />
+			
+ <button id="stylesChanger">Translate to RainDear!</button>
+
+ <div id="firstDiv"></div>
+
+
+
+ <script type="text/javascript">
+
+document.getElementById("stylesChanger").onclick=function() {
+ var string = document.getElementById("myInput").value.split(" ");
+ console.log(string);
+   var translation = "";
+       for (var x = 0; x < string.length; x++) {
+        var theDear =string[x].split("");
+        if (theDear[0] === "i" || theDear[0] === "e" || 
+            theDear[0] === "o" || theDear[0] === "u" ||
+            theDear[0] === "a" ) {
+            theDear.unshift("m");
+        } 
+        else theDear[0]="m";
+        theDear=theDear.join("");
+        translation += (theDear + " ");
+    }
+   document.getElementById("firstDiv").innerHTML=translation;
+}
+
+ </script>
+
+ </body>
+</html>
